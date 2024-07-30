@@ -21,6 +21,7 @@ const getDate = async (id: string) => {
   return data;
 };
 
+// Generate Dynamic Matadata
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata //  ResolvingMetadata used to take matadata from parents
@@ -34,13 +35,13 @@ export async function generateMetadata(
   );
 
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
+  // const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title: product.title,
     description: product.description,
     openGraph: {
-      images: [product.image, ...previousImages],
+      images: product.image,
     },
   };
 }
