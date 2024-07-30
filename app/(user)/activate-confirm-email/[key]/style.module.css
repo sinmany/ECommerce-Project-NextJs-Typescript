@@ -1,0 +1,11 @@
+/* write normal css */
+/* .container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+} */
+
+/* write as thaiwind */
+.container {
+    @apply flex flex-col items-center justify-center h-screen 
+}
