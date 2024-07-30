@@ -1,16 +1,15 @@
 import { CardProductDetailComponent } from "@/components/card/CardProductDetailComponent";
+import { Metadata, ResolvingMetadata } from "next";
 import React from "react";
 
-type PropsParams = {
-  params: {
-    id: number;
-  };
-  searchParams: any;
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
 // Server component fetching data
 const ENDPOINT = "https://fakestoreapi.com/products/";
-const getDate = async (id: number) => {
+const getDate = async (id: string) => {
   const res = await fetch(`${ENDPOINT}${id}`); // As in nextJs has the defual caching, so when we want to remove caching -> code below
 
   // const res = await fetch(`${ENDPOINT}${id}`, { cache: "no-store" }); // {cache: ""no-store"} this mean remove caching
@@ -22,7 +21,31 @@ const getDate = async (id: number) => {
   return data;
 };
 
-export default async function page(props: PropsParams) {
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata //  ResolvingMetadata used to take matadata from parents
+): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+
+  // fetch data
+  const product = await fetch(`https://fakestoreapi.com/products/${id}`).then(
+    (res) => res.json()
+  );
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: product.title,
+    description: product.description,
+    openGraph: {
+      images: [product.image, ...previousImages],
+    },
+  };
+}
+
+export default async function page(props: Props) {
   let data = await getDate(props.params.id);
   return (
     <div className="h-screen grid place-content-center">
