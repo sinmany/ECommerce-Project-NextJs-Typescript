@@ -18,6 +18,7 @@ export default function Page() {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
   return (
     <main className="container">
       <section className="h-screen flex flex-wrap gap-6 justify-center mt-16 ">
