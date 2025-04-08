@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "e-store",
     description: "Good",
     images:
-      "https://lh3.googleusercontent.com/proxy/wiVVmBOkvrJXIhcPQCfEuW1hdjUTNIewkCGwasAprdVHCf4Tm5_EJ6Symc_RYNjNdTrMYl8JfKD8UjXhHrM11DoiGdishjsF-DNItcrwjSQhgMwHtLubwMMh8s1cLNB4iXqz3_cj6WtPYg",
+      "https://cdn.acowebs.com/wp-content/uploads/2019/02/Impact-of-eCommerce-On-Society.png",
   },
 };
 

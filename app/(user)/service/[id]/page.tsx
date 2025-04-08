@@ -9,7 +9,7 @@ type Props = {
 
 // Server component fetching data
 const ENDPOINT = "https://fakestoreapi.com/products/";
-const getDate = async (id: string) => {
+const getData = async (id: string) => {
   const res = await fetch(`${ENDPOINT}${id}`); // As in nextJs has the defual caching, so when we want to remove caching -> code below
 
   // const res = await fetch(`${ENDPOINT}${id}`, { cache: "no-store" }); // {cache: ""no-store"} this mean remove caching
@@ -35,19 +35,19 @@ export async function generateMetadata(
   );
 
   // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
+  const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title: product.title,
     description: product.description,
     openGraph: {
-      images: product.image,
+      images: [product.image, ...previousImages],
     },
   };
 }
 
 export default async function page(props: Props) {
-  let data = await getDate(props.params.id);
+  let data = await getData(props.params.id);
   return (
     <div className="h-screen grid place-content-center">
       <CardProductDetailComponent
