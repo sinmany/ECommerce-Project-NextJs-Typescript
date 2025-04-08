@@ -6,6 +6,7 @@ import Loading from "./(user)/loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./(user)/error";
 import { inter, suwannaphum, localCustomFont } from "./(user)/fonts";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "E-Template",
@@ -35,12 +36,14 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${suwannaphum.variable} ${localCustomFont.variable} "h-screen flex flex-col bg-gray-200"`}
       >
-        <header>
-          <NavbarComponent />
-        </header>
-        <ErrorBoundary errorComponent={Error}>
-          <Suspense fallback={<Loading />}> {children}</Suspense>
-        </ErrorBoundary>
+        <ThemeProvider>
+          <header>
+            <NavbarComponent />
+          </header>
+          <ErrorBoundary errorComponent={Error}>
+            <Suspense fallback={<Loading />}> {children}</Suspense>
+          </ErrorBoundary>
+        </ThemeProvider>
       </body>
     </html>
   );
