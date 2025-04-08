@@ -13,8 +13,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "e-store",
     description: "Good",
-    images:
-      "https://cdn.acowebs.com/wp-content/uploads/2019/02/Impact-of-eCommerce-On-Society.png",
+    url: "https://e-commerce-project-next-js-typescript.vercel.app",
+    type: "website",
+    images: [
+      {
+        url: "https://cdn.acowebs.com/wp-content/uploads/2019/02/Impact-of-eCommerce-On-Society.png",
+        width: 1200,
+        height: 630,
+        alt: "E-Store Preview",
+      },
+    ],
   },
 };
 
