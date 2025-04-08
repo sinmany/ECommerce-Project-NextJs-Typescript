@@ -8,23 +8,22 @@ import Error from "./(user)/error";
 import { inter, suwannaphum, localCustomFont } from "./(user)/fonts";
 
 export const metadata: Metadata = {
-  title: "E-STORE",
-  description: "E-Store is the website for selling many products!",
+  title: "E-Template",
+  description: "A good website for user to buy any product",
   openGraph: {
-    title: "e-store",
-    description: "Good",
-    url: "https://e-commerce-project-next-js-typescript.vercel.app",
-    type: "website",
+    title: "E-Template",
+    description: "A good website for user to buy any product",
     images: [
       {
         url: "https://cdn.acowebs.com/wp-content/uploads/2019/02/Impact-of-eCommerce-On-Society.png",
         width: 1200,
         height: 630,
-        alt: "E-Store Preview",
+        alt: "E-Commerce Preview Image",
       },
     ],
   },
 };
+
 
 export default function RootLayout({
   children,
