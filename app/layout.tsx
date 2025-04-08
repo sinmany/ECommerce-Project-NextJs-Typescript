@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { NavbarComponent } from "@/components/navbar/NavbarComponent";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "./(user)/loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
-import Error from "./error";
-import { inter, suwannaphum, localCustomFont } from "./fonts";
+import Error from "./(user)/error";
+import { inter, suwannaphum, localCustomFont } from "./(user)/fonts";
 
 export const metadata: Metadata = {
   title: "E-STORE",
