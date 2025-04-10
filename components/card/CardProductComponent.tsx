@@ -24,7 +24,7 @@ export default function CardProductComponent({
     <Card
       className="w-64 h-96"
       renderImage={() => (
-        <Image
+        <img
           alt=""
           src={image}
           className="h-[300px] w-38 object-cover overflow-hidden block mx-auto pt-5"

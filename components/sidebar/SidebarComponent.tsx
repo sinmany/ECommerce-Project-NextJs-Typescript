@@ -13,7 +13,7 @@ type MenuItem = {
 
 export function SidebarComponent() {
   const [menu, setMenu] = useState<MenuItem[]>(menuList);
-  console.log(menu);
+
   return (
     <Sidebar aria-label="Default sidebar example">
       <Sidebar.ItemGroup>

@@ -28,6 +28,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // read route params
   const id = params.id;
+  const parentMeta = await parent;
+  console.log('parentMeta', parentMeta)
 
   // fetch data
   const product = await fetch(`https://fakestoreapi.com/products/${id}`).then(
@@ -40,6 +42,7 @@ export async function generateMetadata(
   return {
     title: product.title,
     description: product.description,
+    themeColor: "#102E50",
     openGraph: {
       images: product.image,
     },
@@ -48,6 +51,7 @@ export async function generateMetadata(
 
 export default async function page(props: Props) {
   let data = await getDate(props.params.id);
+
   return (
     <div className="h-screen grid place-content-center">
       <CardProductDetailComponent
