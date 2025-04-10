@@ -11,6 +11,7 @@ import ThemeProvider from "@/providers/ThemeProvider";
 export const metadata: Metadata = {
   title: "E-Template",
   description: "A good website for user to buy any product",
+  themeColor: "#102E50",
   openGraph: {
     title: "E-Template",
     description: "A good website for user to buy any product",
