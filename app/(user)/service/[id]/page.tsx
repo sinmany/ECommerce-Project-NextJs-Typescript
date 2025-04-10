@@ -21,6 +21,13 @@ const getDate = async (id: string) => {
   return data;
 };
 
+export async function generateViewport() {
+  return {
+    themeColor: "#102E50", // or dynamic logic
+  };
+}
+
+
 // Generate Dynamic Matadata
 export async function generateMetadata(
   { params, searchParams }: Props,

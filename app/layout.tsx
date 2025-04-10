@@ -8,10 +8,15 @@ import Error from "./(user)/error";
 import { inter, suwannaphum, localCustomFont } from "./(user)/fonts";
 import ThemeProvider from "@/providers/ThemeProvider";
 
+export async function generateViewport() {
+  return {
+    themeColor: "#BE3D2A", // or dynamic logic
+  };
+}
+
 export const metadata: Metadata = {
   title: "E-Template",
   description: "A good website for user to buy any product",
-  themeColor: "#102E50",
   openGraph: {
     title: "E-Template",
     description: "A good website for user to buy any product",
